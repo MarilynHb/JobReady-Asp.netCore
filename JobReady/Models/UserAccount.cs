@@ -7,7 +7,8 @@ public class UserAccount
 {
     [Key]
     public long Id { get; set; }
-
+    [Required]
+    public string FullName { get; set; }
     [Required]
     [StringLength(50)]
     public string Username { get; set; }
@@ -40,6 +41,9 @@ public class UserAccount
 
     [StringLength(100)]
     public string Location { get; set; }
+
+    public bool isEmailVerified { get; set; }
+    public bool isVerified { get; set; }
 
     public ICollection<UserSkill> Skills { get; set; }
 
